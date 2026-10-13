@@ -10,4 +10,12 @@ class AppDelegate: FlutterAppDelegate {
   override func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
     return true
   }
+
+  override func applicationDidFinishLaunching(_ notification: Notification) {
+    MouseGuard.shared.start()
+  }
+
+  override func applicationWillTerminate(_ notification: Notification) {
+    MouseGuard.shared.stop()
+  }
 }
