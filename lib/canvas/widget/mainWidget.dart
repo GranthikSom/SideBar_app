@@ -9,7 +9,7 @@ Future<void> main() async {
   await windowManager.ensureInitialized();
 
   final windowOptions = WindowOptions(
-    size: Size(sizeConfig.widgetWidth, double.infinity),
+    size: Size(sizeConfig.widgetWidth, sizeConfig.widgetHeight),
     backgroundColor: Colors.transparent,
     skipTaskbar: true,
     titleBarStyle: TitleBarStyle.hidden,
@@ -31,7 +31,7 @@ Future<void> main() async {
         visibleOnFullScreen: true,
       );
 
-      await windowManager.setAlignment(Alignment.centerLeft);
+      await windowManager.setAlignment(WidgetAlignment.Left);
 
       await windowManager.show(inactive: true);
     },
@@ -39,14 +39,14 @@ Future<void> main() async {
 
   
 }
-class VerticalWidget extends StatefulWidget {
-  const VerticalWidget({super.key});
+class MainWidget extends StatefulWidget {
+  const MainWidget({super.key});
 
   @override
-  State<VerticalWidget> createState() => _VerticalWidgetState();
+  State<MainWidget> createState() => _MainWidgetState();
 }
 
-class _VerticalWidgetState extends State<VerticalWidget> {
+class _MainWidgetState extends State<MainWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
