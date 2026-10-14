@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-//vertical widget will have height = screen lenth and horizontal widget have width = screen width 
+
 class sizeConfig {
-  static double widgetWidth = 400.0;
+  static double widgetWidth = 60;
   static double widgetHeight = double.infinity;
 }
 

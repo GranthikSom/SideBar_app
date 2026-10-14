@@ -1,0 +1,12 @@
+[size]
+widget_width = 60.0
+widget_height = 800.0
+
+[alignment]
+position = "left"
+
+[colors]
+background = ""
+secondary = ""
+app = ""
+extra = ""

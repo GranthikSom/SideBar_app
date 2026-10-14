@@ -1,44 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sidebar/config/config.dart';
 
-import 'package:window_manager/window_manager.dart';
-
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  await windowManager.ensureInitialized();
-
-  final windowOptions = WindowOptions(
-    size: Size(sizeConfig.widgetWidth, sizeConfig.widgetHeight),
-    backgroundColor: Colors.transparent,
-    skipTaskbar: true,
-    titleBarStyle: TitleBarStyle.hidden,
-    windowButtonVisibility: false,
-  );
- 
-  windowManager.waitUntilReadyToShow(
-    windowOptions,
-    () async {
-      await windowManager.setAsFrameless();
-      await windowManager.setHasShadow(false);
-      await windowManager.setResizable(false);
-      await windowManager.setMovable(false);
-
-      await windowManager.setAlwaysOnTop(true);
-
-      await windowManager.setVisibleOnAllWorkspaces(
-        true,
-        visibleOnFullScreen: true,
-      );
-
-      await windowManager.setAlignment(WidgetAlignment.Left);
-
-      await windowManager.show(inactive: true);
-    },
-  );
-
-  
-}
 class MainWidget extends StatefulWidget {
   const MainWidget({super.key});
 
@@ -51,8 +13,8 @@ class _MainWidgetState extends State<MainWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: double.infinity,  
-        width: 100,
+        height: sizeConfig.widgetHeight,  
+        width: sizeConfig.widgetWidth,
         decoration: BoxDecoration(
           //borderRadius: BorderRadius.circular(10),
           
